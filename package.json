@@ -4,8 +4,8 @@
   "description": "Water Quality Data Entry App - Water Treatment Plant Asupini Ella",
   "main": "server/server.js",
   "scripts": {
-    "build": "cd client && npm install && npm run build",
-    "start": "cd server && npm install && node server.js",
+    "build": "cd server && npm install && cd ../client && npm install && npm run build",
+    "start": "node server/server.js",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "cd server && node server.js",
     "dev:client": "cd client && npm run dev"
@@ -14,6 +14,9 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "devDependencies": {
     "concurrently": "^9.2.1"
   }
