@@ -1,0 +1,18 @@
+node_modules
+.env
+.env.local
+.DS_Store
+
+# Backend
+server/node_modules/
+server/water_data.sqlite
+server/water_data.sqlite-journal
+
+# Frontend
+client/node_modules/
+client/dist/
+client/dist-ssr/
+client/*.local
+
+# Ignore files outside project scope
+../../../../
