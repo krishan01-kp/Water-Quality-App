@@ -157,8 +157,8 @@ app.get('/api/export/excel', (req, res) => {
     }
 });
 
-// Catch-all: serve React app for any non-API route
-app.get('*', (req, res) => {
+// Catch-all: serve React app for any non-API route (Express 5 syntax)
+app.get('/*path', (req, res) => {
     res.sendFile(path.join(clientBuildPath, 'index.html'));
 });
 
