@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const xlsx = require('xlsx');
+const path = require('path');
 const db = require('./db');
 require('dotenv').config();
 
@@ -13,6 +14,11 @@ app.use(cors({
     allowedHeaders: ['Content-Type']
 }));
 app.use(express.json());
+
+// Serve React build in production
+const clientBuildPath = path.join(__dirname, '../client/dist');
+app.use(express.static(clientBuildPath));
+
 
 // Routes
 // Save or update record for a date
@@ -149,6 +155,11 @@ app.get('/api/export/excel', (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
+});
+
+// Catch-all: serve React app for any non-API route
+app.get('*', (req, res) => {
+    res.sendFile(path.join(clientBuildPath, 'index.html'));
 });
 
 app.listen(port, () => {

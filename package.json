@@ -1,12 +1,14 @@
 {
-  "name": "empty-mariner",
+  "name": "water-quality-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Water Quality Data Entry App - Water Treatment Plant Asupini Ella",
+  "main": "server/server.js",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && node server.js",
-    "client": "cd client && npm run dev"
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && npm install && node server.js",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && node server.js",
+    "dev:client": "cd client && npm run dev"
   },
   "keywords": [],
   "author": "",
