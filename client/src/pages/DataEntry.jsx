@@ -3,7 +3,7 @@ import axios from 'axios';
 import { format } from 'date-fns';
 import { Calendar, Save, CheckCircle2, AlertCircle } from 'lucide-react';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
 const TIMES = ['02:00', '06:00', '10:00', '14:00', '18:00', '22:00'];
 
 const SECTIONS = [

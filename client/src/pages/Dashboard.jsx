@@ -4,7 +4,7 @@ import { format, subDays } from 'date-fns';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { Calendar, Maximize2, X, Activity } from 'lucide-react';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
 const TIMES = ['02:00', '06:00', '10:00', '14:00', '18:00', '22:00'];
 
 const SECTIONS = [
